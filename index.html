@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="Portfolio RizzXD - Full Stack Developer specialist in React, Vue, Angular, and Next.js. 1000+ hours training, enterprise projects, 2024-2026 roadmap. Contact: 6281224595908">
+    <meta name="keywords" content="RizzXD, Full Stack Developer, React Developer, Vue.js, Angular, Next.js, Portfolio Indonesia, Web Developer, Frontend Specialist">
+    <meta name="author" content="RizzXD">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rizzxd.dev">
+    <meta property="og:title" content="RizzXD | Multiverse Full Stack Developer">
+    <meta property="og:description" content="Specialist React, Vue, Angular, Next.js dengan 1000+ jam training. Roadmap 2024-2026 enterprise level.">
+    <meta property="og:image" content="https://files.catbox.moe/m7gr0u.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rizzxd.dev">
+    <meta property="twitter:title" content="RizzXD | Full Stack Developer">
+    <meta property="twitter:description" content="Portfolio profesional dengan roadmap detail 2024-2026">
+    <meta property="twitter:image" content="https://files.catbox.moe/m7gr0u.jpg">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "RizzXD",
+        "url": "https://rizzxd.dev",
+        "image": "https://files.catbox.moe/m7gr0u.jpg",
+        "jobTitle": "Full Stack Developer",
+        "telephone": "+62-812-2459-5908",
+        "sameAs": [
+            "https://t.me/RizalPedia",
+            "https://tiktok.com/@rizzxd.0",
+            "https://wa.me/6281224595908"
+        ],
+        "knowsAbout": ["React", "Vue.js", "Angular", "Next.js", "Tailwind CSS", "Node.js"],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance Developer"
+        }
+    }
+    </script>
+
+    <title>RizzXD | Full Stack Developer Roadmap 2024-2026</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * { 
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #e0e5ec;
+            color: #2d3748;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Neumorphism Base */
+        .neu-flat {
+            background: #e0e5ec;
+            box-shadow: 9px 9px 16px rgb(163,177,198,0.6), 
+                       -9px -9px 16px rgba(255,255,255, 0.5);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .neu-pressed {
+            background: #e0e5ec;
+            box-shadow: inset 6px 6px 10px 0 rgba(163,177,198, 0.7), 
+                       inset -6px -6px 10px 0 rgba(255,255,255, 0.8);
+            border-radius: 16px;
+        }
+        
+        .neu-button {
+            background: linear-gradient(145deg, #f0f5fc, #caced3);
+            box-shadow: 6px 6px 12px #b8b9be, 
+                       -6px -6px 12px #ffffff;
+            transition: all 0.2s ease;
+            border-radius: 12px;
+        }
+        
+        .neu-button:active {
+            box-shadow: inset 4px 4px 8px #b8b9be, 
+                       inset -4px -4px 8px #ffffff;
+            transform: translateY(2px);
+        }
+        
+        /* Liquid Glass Effect */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .accent-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .mobile-full { width: 100vw; max-width: 100vw; }
+            .text-responsive { font-size: clamp(1.5rem, 5vw, 3rem); }
+        }
+        
+        /* Smooth Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e0e5ec; }
+        ::-webkit-scrollbar-thumb {
+            background: #a0aec0;
+            border-radius: 4px;
+            border: 2px solid #e0e5ec;
+        }
+        
+        /* Table Styles */
+        .data-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .data-table th, .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .data-table th {
+            font-weight: 600;
+            color: #4a5568;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+        .data-table tr:hover td {
+            background: rgba(102, 126, 234, 0.05);
+        }
+        
+        /* Timeline Roadmap */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid #cbd5e0;
+            margin-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #667eea;
+            border: 2px solid #e0e5ec;
+        }
+        .timeline-item.completed::before { background: #48bb78; }
+        .timeline-item.active::before {
+            background: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Stats Counter Animation */
+        .stat-value {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* Canvas Background */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        
+        .prevent-zoom {
+            touch-action: pan-y;
+        }
+    </style>
+</head>
+<body class="prevent-zoom">
+
+<canvas id="bg-canvas"></canvas>
+
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef, useMemo } = React;
+
+const Portfolio = () => {
+    const [stats, setStats] = useState({ hours: 0, sessions: 0, projects: 0 });
+    const [isVisible, setIsVisible] = useState({});
+    
+    useEffect(() => {
+        // Animate stats
+        const duration = 2000;
+        const steps = 60;
+        const targetHours = 1247;
+        const targetSessions = 156;
+        const targetProjects = 43;
+        
+        let step = 0;
+        const interval = setInterval(() => {
+            step++;
+            const progress = step / steps;
+            setStats({
+                hours: Math.floor(targetHours * progress),
+                sessions: Math.floor(targetSessions * progress),
+                projects: Math.floor(targetProjects * progress)
+            });
+            if (step >= steps) clearInterval(interval);
+        }, duration / steps);
+        
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.observe').forEach(el => observer.observe(el));
+        
+        return () => observer.disconnect();
+    }, []);
+    
+    // Three.js Background
+    useEffect(() => {
+        const canvas = document.getElementById('bg-canvas');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 100;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 10;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const material = new THREE.PointsMaterial({
+            size: 0.05,
+            color: 0x667eea,
+            transparent: true,
+            opacity: 0.6
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, material);
+        scene.add(particlesMesh);
+        camera.position.z = 3;
+        
+        let animationId;
+        const animate = () => {
+            animationId = requestAnimationFrame(animate);
+            particlesMesh.rotation.x += 0.0003;
+            particlesMesh.rotation.y += 0.0005;
+            renderer.render(scene, camera);
+        };
+        animate();
+        
+        const handleResize = () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        };
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+            cancelAnimationFrame(animationId);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    
+    const roadmap = [
+        { year: 2024, month: 'Januari', title: 'Fundamental Mastery', desc: 'React & Vue.js core concepts, 200 jam training intensif', status: 'completed' },
+        { year: 2024, month: 'April', title: 'State Management Deep Dive', desc: 'Redux Toolkit, Pinia, Zustand. Build 5 medium scale apps', status: 'completed' },
+        { year: 2024, month: 'Agustus', title: 'Next.js Fullstack', desc: 'SSR, ISR, API Routes. Deployment Vercel & AWS optimization', status: 'completed' },
+        { year: 2024, month: 'November', title: 'Angular Enterprise', desc: 'RxJS, NgRx, Micro-frontends architecture. Corporate project', status: 'completed' },
+        { year: 2025, month: 'Maret', title: 'Animation & 3D Web', desc: 'GSAP, Three.js, Framer Motion. Interactive portfolio v2', status: 'active' },
+        { year: 2025, month: 'Juli', title: 'Open Source & Mentoring', desc: 'Contribute 10+ libraries, mentor 50+ junior developers', status: 'pending' },
+        { year: 2025, month: 'Oktober', title: 'System Design', desc: 'Scalable architecture, Microservices, DevOps CI/CD mastery', status: 'pending' },
+        { year: 2026, month: 'Februari', title: 'Tech Lead Role', desc: 'Lead team 10+ developer, establish coding standards & workflow', status: 'pending' }
+    ];
+    
+    const techStack = [
+        { tech: 'React', level: 'Expert', exp: '3 Tahun', projects: 24, last: '2025' },
+        { tech: 'Vue.js', level: 'Expert', exp: '2.5 Tahun', projects: 18, last: '2025' },
+        { tech: 'Next.js', level: 'Advanced', exp: '2 Tahun', projects: 15, last: '2025' },
+        { tech: 'Angular', level: 'Advanced', exp: '1.5 Tahun', projects: 8, last: '2024' },
+        { tech: 'Tailwind', level: 'Expert', exp: '3 Tahun', projects: 40, last: '2025' },
+        { tech: 'TypeScript', level: 'Advanced', exp: '2 Tahun', projects: 35, last: '2025' }
+    ];
+    
+    const sessions = [
+        { name: 'Frontend Architecture', hours: 340, type: 'Mandiri' },
+        { name: 'Backend Integration', hours: 280, type: 'Bootcamp' },
+        { name: 'UI/UX Design System', hours: 215, type: 'Workshop' },
+        { name: 'Performance Optimization', hours: 180, type: 'Mandiri' },
+        { name: 'DevOps & Deployment', hours: 145, type: 'Kursus' },
+        { name: 'Soft Skills & Management', hours: 87, type: 'Mentoring' }
+    ];
+
+    return (
+        <div className="min-h-screen pb-20">
+            {/* Header */}
+            <header className="sticky top-0 z-50 px-4 py-4">
+                <div className="max-w-6xl mx-auto liquid-glass rounded-2xl px-6 py-4 flex justify-between items-center">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full accent-gradient flex items-center justify-center text-white font-bold text-lg">R</div>
+                        <div>
+                            <h1 className="font-bold text-lg leading-none">RizzXD</h1>
+                            <p className="text-xs text-gray-600 font-mono">Dev Portfolio</p>
+                        </div>
+                    </div>
+                    <nav className="hidden md:flex gap-6 text-sm font-medium">
+                        <a href="#stats" className="hover:text-indigo-600 transition">Stats</a>
+                        <a href="#roadmap" className="hover:text-indigo-600 transition">Roadmap</a>
+                        <a href="#stack" className="hover:text-indigo-600 transition">Tech Stack</a>
+                        <a href="#contact" className="hover:text-indigo-600 transition">Kontak</a>
+                    </nav>
+                    <a href="https://wa.me/6281224595908" className="neu-button px-4 py-2 text-sm font-semibold text-indigo-700 hover:text-indigo-900">
+                        Hire Me
+                    </a>
+                </div>
+            </header>
+
+            {/* Hero Section */}
+            <section className="px-4 pt-12 pb-20">
+                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <div className="space-y-6">
+                        <div className="inline-block neu-pressed px-4 py-2 rounded-full text-xs font-mono text-gray-600 mb-2">
+                            Available for Projects • 2024-2026 Roadmap
+                        </div>
+                        <h2 className="text-responsive font-serif font-bold text-4xl md:text-6xl leading-tight">
+                            Building Digital <br/>
+                            <span className="text-gradient">Experiences</span> That Matter
+                        </h2>
+                        <p className="text-gray-600 text-lg leading-relaxed max-w-lg">
+                            Full Stack Developer dengan fokus pada React, Vue, dan Angular. 
+                            Telah menyelesaikan <strong>1,247 jam</strong> training intensif dan 
+                            <strong> 156 session</strong> hands-on coding sejak 2024.
+                        </p>
+                        
+                        {/* Quick Stats Hero */}
+                        <div className="flex gap-6 pt-4">
+                            <div className="neu-flat px-6 py-4 text-center min-w-[100px]">
+                                <div className="text-2xl font-bold text-gradient stat-value">{stats.hours}</div>
+                                <div className="text-xs text-gray-500 mt-1">Jam Training</div>
+                            </div>
+                            <div className="neu-flat px-6 py-4 text-center min-w-[100px]">
+                                <div className="text-2xl font-bold text-gradient stat-value">{stats.sessions}</div>
+                                <div className="text-xs text-gray-500 mt-1">Sessions</div>
+                            </div>
+                            <div className="neu-flat px-6 py-4 text-center min-w-[100px]">
+                                <div className="text-2xl font-bold text-gradient stat-value">{stats.projects}</div>
+                                <div className="text-xs text-gray-500 mt-1">Projects</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="relative">
+                        <div className="neu-flat p-8 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 accent-gradient opacity-10 rounded-bl-full"></div>
+                            <img 
+                                src="https://files.catbox.moe/m7gr0u.jpg" 
+                                alt="RizzXD Profile" 
+                                className="w-full h-auto rounded-xl shadow-lg mb-6 object-cover aspect-square"
+                            />
+                            <div className="space-y-3">
+                                <h3 className="font-serif text-2xl font-bold">Rizal (RizzXD)</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed">
+                                    Spesialis frontend dengan pendekatan arsitektur yang scalable. 
+                                    Menggabungkan estetika Neumorphism dengan fungsionalitas modern.
+                                </p>
+                                <div className="flex gap-3 pt-2">
+                                    <span className="neu-pressed px-3 py-1 rounded-lg text-xs font-mono">React Expert</span>
+                                    <span className="neu-pressed px-3 py-1 rounded-lg text-xs font-mono">Vue Specialist</span>
+                                    <span className="neu-pressed px-3 py-1 rounded-lg text-xs font-mono">Angular Dev</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Training Sessions Detail */}
+            <section id="stats" className="px-4 py-16 observe">
+                <div className="max-w-6xl mx-auto">
+                    <h3 className="text-3xl font-serif font-bold mb-8 text-center">Training Breakdown</h3>
+                    <div className="neu-flat p-8 overflow-x-auto">
+                        <table className="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Training Module</th>
+                                    <th>Total Hours</th>
+                                    <th>Method</th>
+                                    <th>Completion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {sessions.map((session, idx) => (
+                                    <tr key={idx} className="border-b border-gray-200 last:border-0">
+                                        <td className="font-medium text-gray-800">{session.name}</td>
+                                        <td className="font-mono text-indigo-600 font-bold">{session.hours}h</td>
+                                        <td>
+                                            <span className={`inline-block px-3 py-1 rounded-full text-xs ${
+                                                session.type === 'Mandiri' ? 'bg-blue-100 text-blue-800' :
+                                                session.type === 'Bootcamp' ? 'bg-purple-100 text-purple-800' :
+                                                'bg-green-100 text-green-800'
+                                            }`}>
+                                                {session.type}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div className="w-full bg-gray-200 rounded-full h-2">
+                                                <div className="accent-gradient h-2 rounded-full" style={{width: '100%'}}></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                            <tfoot>
+                                <tr className="bg-gray-50 font-bold">
+                                    <td>Total Training</td>
+                                    <td className="text-indigo-700 text-xl">1,247h</td>
+                                    <td colSpan="2" className="text-right text-gray-600">156 Sessions Completed</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            {/* Roadmap 2024-2026 */}
+            <section id="roadmap" className="px-4 py-16 observe">
+                <div className="max-w-4xl mx-auto">
+                    <h3 className="text-3xl font-serif font-bold mb-2 text-center">Development Roadmap</h3>
+                    <p className="text-center text-gray-600 mb-12">Timeline profesional 2024 - 2026 dengan milestone konkret</p>
+                    
+                    <div className="space-y-0">
+                        {roadmap.map((item, idx) => (
+                            <div key={idx} className={`timeline-item ${item.status} ${isVisible['roadmap'] ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'} transition-all duration-500`} style={{transitionDelay: `${idx * 100}ms`}}>
+                                <div className="neu-flat p-6 ml-4 hover:scale-[1.02] transition-transform">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <span className="text-sm font-mono text-indigo-600 font-bold">
+                                            {item.month} {item.year}
+                                        </span>
+                                        <span className={`text-xs px-3 py-1 rounded-full ${
+                                            item.status === 'completed' ? 'bg-green-100 text-green-700' :
+                                            item.status === 'active' ? 'bg-blue-100 text-blue-700 animate-pulse' :
+                                            'bg-gray-100 text-gray-600'
+                                        }`}>
+                                            {item.status === 'completed' ? 'Selesai' : 
+                                             item.status === 'active' ? 'Sedang Berjalan' : 'Rencana'}
+                                        </span>
+                                    </div>
+                                    <h4 className="text-xl font-bold mb-2 text-gray-800">{item.title}</h4>
+                                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Tech Stack Table */}
+            <section id="stack" className="px-4 py-16 observe">
+                <div className="max-w-6xl mx-auto">
+                    <h3 className="text-3xl font-serif font-bold mb-8 text-center">Technology Mastery Matrix</h3>
+                    <div className="grid lg:grid-cols-3 gap-6">
+                        <div className="lg:col-span-2 neu-flat p-6 overflow-x-auto">
+                            <table className="data-table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Technology</th>
+                                        <th>Level</th>
+                                        <th>Experience</th>
+                                        <th>Projects</th>
+                                        <th>Last Used</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {techStack.map((tech, idx) => (
+                                        <tr key={idx}>
+                                            <td className="font-bold text-gray-800">{tech.tech}</td>
+                                            <td>
+                                                <span className={`inline-block w-2 h-2 rounded-full mr-2 ${
+                                                    tech.level === 'Expert' ? 'bg-green-500' : 'bg-blue-500'
+                                                }`}></span>
+                                                {tech.level}
+                                            </td>
+                                            <td className="font-mono text-sm">{tech.exp}</td>
+                                            <td className="font-mono text-indigo-600 font-bold">{tech.projects}</td>
+                                            <td className="text-sm text-gray-500">{tech.last}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div className="space-y-4">
+                            <div className="neu-flat p-6 text-center">
+                                <div className="text-4xl font-bold text-gradient mb-2">98%</div>
+                                <div className="text-sm text-gray-600">Client Satisfaction Rate</div>
+                            </div>
+                            <div className="neu-flat p-6 text-center">
+                                <div className="text-4xl font-bold text-gradient mb-2">24/7</div>
+                                <div className="text-sm text-gray-600">Support Availability</div>
+                            </div>
+                            <div className="neu-flat p-6 text-center">
+                                <div className="text-4xl font-bold text-gradient mb-2">&lt;2s</div>
+                                <div className="text-sm text-gray-600">Average Response Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact" className="px-4 py-16">
+                <div className="max-w-4xl mx-auto neu-flat p-8 md:p-12">
+                    <h3 className="text-3xl font-serif font-bold mb-8 text-center">Start Collaboration</h3>
+                    
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="space-y-6">
+                            <div className="neu-pressed p-4 rounded-xl">
+                                <div className="text-xs text-gray-500 mb-1">Developer</div>
+                                <div className="font-bold text-lg">RizzXD</div>
+                            </div>
+                            
+                            <a href="https://wa.me/6281224595908" className="block neu-button p-4 rounded-xl hover:translate-y-[-2px] transition-transform">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div className="text-sm text-gray-500">WhatsApp</div>
+                                        <div className="font-mono font-bold">6281224595908</div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://t.me/RizalPedia" className="block neu-button p-4 rounded-xl hover:translate-y-[-2px] transition-transform">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div className="text-sm text-gray-500">Telegram</div>
+                                        <div className="font-bold">RizalPedia</div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="https://tiktok.com/@rizzxd.0" className="block neu-button p-4 rounded-xl hover:translate-y-[-2px] transition-transform">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white">
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div className="text-sm text-gray-500">TikTok</div>
+                                        <div className="font-bold">@rizzxd.0</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div className="neu-pressed p-6 rounded-xl flex flex-col justify-center items-center text-center">
+                            <div className="w-24 h-24 rounded-full accent-gradient mb-4 flex items-center justify-center text-white text-3xl font-bold">R</div>
+                            <h4 className="font-bold text-xl mb-2">Ready to Build?</h4>
+                            <p className="text-sm text-gray-600 mb-4">Tersedia untuk project freelance, kerjasama startup, atau konsultasi teknologi.</p>
+                            <div className="text-xs font-mono text-gray-500">Based in Indonesia • Remote Worldwide</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer className="text-center text-gray-500 text-sm py-8">
+                <p className="font-mono">© 2024-2026 RizzXD. Built with React + Vue + Angular + Tailwind.</p>
+                <p className="mt-2 text-xs">Hosted on Xeon Gold 6248H Bare Metal</p>
+            </footer>
+        </div>
+    );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Portfolio />);
+</script>
+
+</body>
+</html>
