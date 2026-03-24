@@ -6,23 +6,17 @@
     <meta name="description" content="Portfolio RizzXD - Full Stack Developer specialist in React, Vue, Angular, and Next.js. 1000+ hours training, enterprise projects, 2024-2026 roadmap. Contact: 6281224595908">
     <meta name="keywords" content="RizzXD, Full Stack Developer, React Developer, Vue.js, Angular, Next.js, Portfolio Indonesia, Web Developer, Frontend Specialist">
     <meta name="author" content="RizzXD">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
+    <meta name="robots" content="index, follow"
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rizzxd.dev">
     <meta property="og:title" content="RizzXD | Multiverse Full Stack Developer">
     <meta property="og:description" content="Specialist React, Vue, Angular, Next.js dengan 1000+ jam training. Roadmap 2024-2026 enterprise level.">
     <meta property="og:image" content="https://files.catbox.moe/m7gr0u.jpg">
-
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://rizzxd.dev">
     <meta property="twitter:title" content="RizzXD | Full Stack Developer">
     <meta property="twitter:description" content="Portfolio profesional dengan roadmap detail 2024-2026">
     <meta property="twitter:image" content="https://files.catbox.moe/m7gr0u.jpg">
-
-    <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -102,7 +96,6 @@
             transform: translateY(2px);
         }
         
-        /* Liquid Glass Effect */
         .liquid-glass {
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(12px);
@@ -122,7 +115,6 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
-        /* Mobile Optimization */
         @media (max-width: 768px) {
             .mobile-full { width: 100vw; max-width: 100vw; }
             .text-responsive { font-size: clamp(1.5rem, 5vw, 3rem); }
@@ -137,7 +129,6 @@
             border: 2px solid #e0e5ec;
         }
         
-        /* Table Styles */
         .data-table {
             width: 100%;
             border-collapse: separate;
@@ -159,7 +150,6 @@
             background: rgba(102, 126, 234, 0.05);
         }
         
-        /* Timeline Roadmap */
         .timeline-item {
             position: relative;
             padding-left: 2rem;
@@ -188,12 +178,10 @@
             50% { transform: scale(1.2); }
         }
         
-        /* Stats Counter Animation */
         .stat-value {
             font-variant-numeric: tabular-nums;
         }
         
-        /* Canvas Background */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -224,7 +212,6 @@ const Portfolio = () => {
     const [isVisible, setIsVisible] = useState({});
     
     useEffect(() => {
-        // Animate stats
         const duration = 2000;
         const steps = 60;
         const targetHours = 1247;
@@ -243,7 +230,6 @@ const Portfolio = () => {
             if (step >= steps) clearInterval(interval);
         }, duration / steps);
         
-        // Intersection Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -257,7 +243,6 @@ const Portfolio = () => {
         return () => observer.disconnect();
     }, []);
     
-    // Three.js Background
     useEffect(() => {
         const canvas = document.getElementById('bg-canvas');
         const scene = new THREE.Scene();
@@ -339,7 +324,6 @@ const Portfolio = () => {
 
     return (
         <div className="min-h-screen pb-20">
-            {/* Header */}
             <header className="sticky top-0 z-50 px-4 py-4">
                 <div className="max-w-6xl mx-auto liquid-glass rounded-2xl px-6 py-4 flex justify-between items-center">
                     <div className="flex items-center gap-3">
@@ -361,7 +345,6 @@ const Portfolio = () => {
                 </div>
             </header>
 
-            {/* Hero Section */}
             <section className="px-4 pt-12 pb-20">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
@@ -420,7 +403,6 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            {/* Training Sessions Detail */}
             <section id="stats" className="px-4 py-16 observe">
                 <div className="max-w-6xl mx-auto">
                     <h3 className="text-3xl font-serif font-bold mb-8 text-center">Training Breakdown</h3>
@@ -468,7 +450,6 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            {/* Roadmap 2024-2026 */}
             <section id="roadmap" className="px-4 py-16 observe">
                 <div className="max-w-4xl mx-auto">
                     <h3 className="text-3xl font-serif font-bold mb-2 text-center">Development Roadmap</h3>
@@ -500,7 +481,6 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            {/* Tech Stack Table */}
             <section id="stack" className="px-4 py-16 observe">
                 <div className="max-w-6xl mx-auto">
                     <h3 className="text-3xl font-serif font-bold mb-8 text-center">Technology Mastery Matrix</h3>
@@ -553,7 +533,6 @@ const Portfolio = () => {
                 </div>
             </section>
 
-            {/* Contact Section */}
             <section id="contact" className="px-4 py-16">
                 <div className="max-w-4xl mx-auto neu-flat p-8 md:p-12">
                     <h3 className="text-3xl font-serif font-bold mb-8 text-center">Start Collaboration</h3>
