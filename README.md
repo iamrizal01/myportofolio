@@ -1,6 +1,6 @@
 # Banner
 
-![Banner Image](https://via.placeholder.com/1200x300?text=My+Portfolio)
+![Banner Image](https://files.catbox.moe/m7gr0u.jpg)
 
 # Dynamic Typing Effect
 
